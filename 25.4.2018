@@ -1,0 +1,37 @@
+var count = -1;
+arr = [];
+function circle(r){
+  ++count;
+  var s = 3.14*r*r;
+  return arr[count] =  {name : "circle" , S : s};
+}
+function triangle(x,y){
+  ++count;
+  var s = x*0.5*y;
+  return arr[count] =  {name : "triangle" , S : s};
+}
+function rectangle(x,y){
+  ++count;
+  var s = x*y;
+  return arr[count] =  {name : "rectangle" , S : s};
+}
+circle(10);
+triangle(10.1,5.3);
+rectangle(4.3,5.7);
+circle(10);
+rectangle(4.3,5.7);
+
+var circle = 0;
+var triangle = 0;
+var rectangle = 0;
+
+for(key in arr){
+  if(arr[key].name == 'circle') circle++;
+  if(arr[key].name == 'triangle') triangle++;
+  if(arr[key].name == 'rectangle') rectangle++;
+}
+
+
+console.log('Згенеровано стільки обєктів ' + arr.length);
+console.log('коло = ' +  circle + ' трикутник = ' +  triangle + ' прямокутників = ' + rectangle);
+
